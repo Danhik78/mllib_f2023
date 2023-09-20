@@ -23,7 +23,7 @@ class BaseDataset(ABC):
 
 
     def _divide_into_sets(self):
-        # TODO define self.inputs_train, self.targets_train, self.inputs_valid, self.targets_valid,
+        # define self.inputs_train, self.targets_train, self.inputs_valid, self.targets_valid,
         #  self.inputs_test, self.targets_test
         n = len(self.inputs)
         shuffled_index = np.arange(n)
