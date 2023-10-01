@@ -15,3 +15,8 @@ cfg.train_type = TrainType.gradient_descent
 
 # how many times the algorithm will process the entire dataset for gradient descent algorithm
 cfg.epoch = 100
+
+#cfg.exp_name = ''
+cfg.env_path = '' # Путь до файла .env где будет храниться api_token.
+cfg.project_name = ''
+
