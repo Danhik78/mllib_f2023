@@ -1,5 +1,7 @@
 import plotly.graph_objects as go
 import numpy as np
+import plotly.express as px
+
 
 class Visualisation():
     """
@@ -39,4 +41,10 @@ class Visualisation():
             >>> fig.show()
         """
 
+    def compare_model_predictions(self,x_values,y_values_list,y_actual,title):
+        fig = go.Figure(data=go.Scatter(x=x_values,y=y_actual,mode='markers'))
+        sort_inexes = np.argsort(x_values)
+        fig.add_trace(go.Scatter(x=x_values[sort_inexes],y=y_values_list[sort_inexes]))
+        with open("graph.html", "w", encoding="utf-8") as f:
+            f.write(fig.to_html())
     pass

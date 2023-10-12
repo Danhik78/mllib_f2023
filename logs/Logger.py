@@ -9,10 +9,15 @@ class Logger():
         load_dotenv(env_path)
         self.run = neptune.init_run(
             project=project,
-            api_token=os.environ['NEPTUNE_APIKEY'],
+            api_token=os.environ['api_token'],
             name=experiment_name
         )
 
+
+
+    def set_valid(self,inputs,targets):
+        self.inputs = inputs
+        self.targets = targets
     def log_hyperparameters(self, params: dict):
         # сохранение гиперпараметов модели
         for param, value in params.items():

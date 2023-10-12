@@ -17,4 +17,5 @@ def MSE(predictions: np.ndarray, targets: np.ndarray) -> float:
     TODO implement this function. This function is expected to be implemented without the use of loops.
 
     """
+    return 1/len(targets)*sum((predictions-targets)**2)
     pass
